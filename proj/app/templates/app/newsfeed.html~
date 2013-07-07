@@ -1,0 +1,66 @@
+{% extends 'base_menu.html' %}
+ 
+ 
+{% block title %} MEETme {% endblock %}
+ 
+{% block content %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script>
+$(function() {
+	$( ".interests" ).each(function( index ) {
+
+		var parts = $(this).text().split(',');
+		var code = $(this).html();
+
+		
+		$.each(parts, function(index, value) {
+			code = code.replace(value, '<img src="{{STATIC_URL}}images/icons/' + value + '.png">' + value); 
+		});
+		$(this).html(code);
+	});
+
+});
+</script>
+	<div id="searchbox">
+	<form id="searchbox" action="">
+		<input type="hidden" value="Seach Interests" />
+		<input type="text" name="q" size="35" />
+		<input type="submit" name="search" value="Seach Interests!" />
+	</form>
+	</div>
+    {% for profile in profiles %}
+    <div class="profile">
+        <h2>
+            <a href="{{profile.get_absolute_url}}">
+                {{profile.user.username}}
+            </a>
+        </h2>
+        <p><span class="interests">{{profile.interests}}</span></p>
+	<p><span>{{profile.description}}</span></p>
+        <p>
+            Signed up on
+            <time datetime="{{profile.created|date:"c"}}">
+            {{profile.created|date}}
+            </time>
+        </p>
+    </div>
+    {% endfor %}
+    {% for event in events %}
+    <div class="event">
+        <h2>
+            <a href="{{event}}">
+                {{event.title}}
+            </a>
+        </h2>
+        <p><span class="interests">{{event.interests}}</span></p>
+        <p>
+            <time datetime="{{event.created|date:"c"}}">
+            {{event.created|date}}
+            </time>
+        </p>
+    </div>
+    {% endfor %}
+{% endblock %}

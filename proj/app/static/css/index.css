@@ -1,0 +1,92 @@
+div#Notifications {
+	font-weight:bold; 
+	color:red; 
+	font-size:20px; 
+	float:right; 
+	background-color:yellow;
+}
+
+.signin {
+	-moz-box-shadow:inset 0px 0px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #fce2c1;
+
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #FF9933), color-stop(1, #FF9933) );
+	background:-moz-linear-gradient( center top, #FF9933 5%, #FF9933 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9933', endColorstr='#FF9933');
+	background-color:#FF9933;
+	box-shadow:3px 3px 5px #c5c5c5;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:60px;
+	font-weight:bold;
+	padding:32px 76px;
+	text-decoration:none;
+	text-shadow:1px 4px 0px #cc9f52;
+}.signin:hover {
+	box-shadow:3px 3px 5px #c5c5c5;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00CCFF), color-stop(1, #00CCFF) );
+	background:-moz-linear-gradient( center top, #00CCFF 5%, #00CCFF 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00CCFF', endColorstr='#00CCFF');
+	background-color:#00CCFF;
+	color:#FFFFFF
+}.signin:active {
+	box-shadow:3px 3px 5px #c5c5c5;
+	position:relative;
+	top:1px;
+}
+
+
+.signup {
+	-moz-box-shadow:inset 0px 0px 0px 0px #fce2c1;
+	box-shadow:3px 3px 5px #c5c5c5;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #FF9933), color-stop(1, #FF9933) );
+	background:-moz-linear-gradient( center top, #FF9933 5%, #FF9933 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9933', endColorstr='#FF9933');
+	background-color:#FF9933;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:60px;
+	font-weight:bold;
+	padding:32px 76px;
+	text-decoration:none;
+	text-shadow:1px 4px 0px #cc9f52;
+}.signup:hover {
+	box-shadow:3px 3px 5px #c5c5c5;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00CCFF), color-stop(1, #00CCFF) );
+	background:-moz-linear-gradient( center top, #00CCFF 5%, #00CCFF 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00CCFF', endColorstr='#00CCFF');
+	background-color:#00CCFF;
+	color:#FFFFFF
+}.signup:active {
+	box-shadow:3px 3px 5px #c5c5c5;
+	position:relative;
+	top:1px;
+}
+
+div#slogan {
+	text-shadow:3px 3px 3px #333;
+	font-family: arial;
+	color: #FFF;
+	font-size: 22px;
+	margin-left: 30px;
+		
+}
+div#icons {
+	font-family: Arial;
+	text-shadow:3px 3px 3px #333;
+	color: #ffffff;
+	font-size: 18px;
+	margin-left: 30px;
+}
+
+span#meet{
+	color:orange;
+}

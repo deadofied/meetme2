@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+ 
+ 
+{% block title %} MEETme {% endblock %}
+ 
+{% block content %}
+	 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/register.css">
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+
+<script>
+$(function() {
+    initialize();
+	
+	locationValidated = false;
+	
+	function initialize() {
+		geocoder = new google.maps.Geocoder();
+		var latlng = new google.maps.LatLng(0.0, 0.0);
+	    var myOptions = {zoom: 8, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP, mapTypeControl: false, disableDoubleClickZoom: true, streetViewControl: false, draggable:false, zoomControl: false, scrollwheel: false}
+	
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	
+	if ($('#location').val() == "") {
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+				map.setCenter(initialLocation);
+				
+				geocoder.geocode({'latLng': initialLocation}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						if (results[0]) {
+							$("#location").val(results[0].formatted_address);
+							$("#address").val(results[0].formatted_address);
+								
+							$("#latitude").val(results[0].geometry.location.lat());
+							$("#longitude").val(results[0].geometry.location.lng());
+						}
+					}
+				});
+		
+			}, function() {
+				//handleNoGeolocation(browserSupportFlag);
+			});
+		}
+	}
+  }
+
+function codeAddress() {
+    var address = $("#location").val();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+		map.setCenter(results[0].geometry.location);
+		
+		$("#location").val(results[0].formatted_address);
+		$("#location").val(results[0].formatted_address);
+			
+      } else { alert("We could not determine your location for the following reason: " + status); }
+    });
+  }
+
+});
+</script>
+
+
+<h1> User Registration: </h1>
+
+
+<form>
+<table style="cellspacing:50px;">
+<tr>
+<td>first name:</td>
+<td><input type="text" name="first name"></td>
+</tr>
+<tr>
+<td>last name:</td>
+<td><input type="text" name="last name"></td>
+</tr>
+<tr>
+<td>email:</td>
+<td><input type="text" name="E-mail adress"></td>
+</tr>
+<tr>
+<td>password:</td>
+<td><input type="password" name="password"></td>
+</tr>
+<tr>
+<td>confirm password:</td>
+<td><input type="password" name="retype your password"></td>
+</tr>
+<tr>
+<td>location:</td>
+<td><input type="text" name="location" id="location"></td>
+</tr>
+</table>
+<br />
+<div id="map_canvas" style="height:200px;width:300px;"></div><br />
+<input type="submit" value="Register"><br />
+</form>
+<div style="height:402px;width:600px;position:absolute;right:200px;top:200px;">
+<a href="http://127.0.0.1:8001/aboutus/" class="aboutus"><img src="{{STATIC_URL}}images/meetme_team.jpg" style="height:405px;width:720px;" />;</a>
+</div>
+<br />
+<a href="http://127.0.0.1:8001/" class="homepage">Back to homepage</a> <br><br>
+{% endblock %}

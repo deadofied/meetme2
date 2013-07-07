@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+ 
+ 
+{% block title %} MEETme {% endblock %}
+ 
+{% block content %}
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/index.css">
+
+
+
+ <table><tr>
+
+
+
+<td style="width:700px; margin:0 auto;">
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<a href="http://127.0.0.1:8001/loginview/" class="signin">Sign in&nbsp;</a> <br><br> 
+	<a href="http://127.0.0.1:8001/register/" class="signup">Sign up </a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+</td>
+
+
+<td style="background-color:#33CCFF; width:2000px; padding:15px;">
+<div id="slogan">
+	Welcome to MEETme,<br>
+		Enjoy the new experience of meeting people <br> you've never thought even existed!<br><br><br><br>
+</div>
+<div id="icons">
+	<img src="{{STATIC_URL}}images/Location-icon.png" style="height:50px;width:50px;" /> Find people near your area <br>
+	<img src="{{STATIC_URL}}images/share.png" style="height:50px;width:50px;" /> Share your interests <br>
+	<img src="{{STATIC_URL}}images/event.jpg" style="height:50px;width:50px;" /> Hold or attend events<br>
+</div>
+</td>
+
+
+</tr></table>
+
+
+
+
+{% endblock %}

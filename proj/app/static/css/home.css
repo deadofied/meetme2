@@ -1,0 +1,43 @@
+
+div#events{
+	min-height:450px;
+	max-width: 700px;
+	padding:10px;
+}
+
+div#CE{
+	width:500px;
+	height:300px;
+	padding:10px;
+	position:absolute;
+	right:100px;
+	top:250px;
+}
+
+a#create_event{
+	display:block;
+	position:absolute;
+	right:25px;
+	width:150px;
+	text-align:center;
+	font-weight:bold;
+	padding:10px;
+	color:#FFFFFF;	
+	background-color:orange;
+}
+
+a#create_event:hover,a#create_event:active{
+	color:#777777;
+}
+
+table#ceTable{
+	box-shadow:5px 5px 5px;
+	cellspacing:50px;
+	border:solid 7px orange;
+	padding:15px;
+	position:absolute;
+	right:10px;
+	top:45px;
+	border-radius:20px;
+}
+

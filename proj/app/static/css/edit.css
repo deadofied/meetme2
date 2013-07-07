@@ -1,0 +1,27 @@
+div#username{
+text-align:center;
+	font-size:50px;
+	font-family:arial;
+	color:orange;
+	shadow-color:black;
+	text-shadow:3px 3px 3px #e18100;
+
+}
+
+#profile_info{
+	color:#3bb9ff;
+	text-align:center;
+}
+
+#dragNdrop{
+	padding-left:150px;
+}
+#profile_desc{
+	text-align:center;
+	color:#3bb9ff;
+
+}
+
+#savebutton{
+	margin-left:600px;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+ 
+{% block title %}{{profile.title}}{% endblock %}
+ 
+{% block content %}
+<article>
+    <header>
+        <h1> {{profile.title}} </h1>
+        <p>
+            Signed up on
+            <time datetime="{{profile.created|date:"c"}}">
+            {{profile.created|date}}
+            </time>
+        </p>
+    </header>
+    <p class="description">
+        {{profile.description}}
+    </p>
+	<p class="intrests">
+	{% for interest in interests %}
+	{{profile.interests}}
+	</p>
+    {{profile.content|safe}}
+</article>
+{% endblock %}

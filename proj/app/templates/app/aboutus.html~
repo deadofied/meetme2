@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+ 
+ 
+{% block title %} MEETme {% endblock %}
+ 
+{% block content %}
+
+<br><br><br>
+
+	Working on this website was a great experience for all of us. Some parts of making the website were really easy, while others took a lot of thinking, and a lot of help. We did not have much time to finish this basic website, but luckily for us, we were able to manage it. Our instructors helped us through every step of the way, and that makes us really greatful. We believe that MEETme is a website that everybody trule does need, and that is why we decided to make it in the first place. We never came across a website where sharing one's interests and holding events was very easy, so we decided to make our own. With MEETme, one can easily find people near his area (we use google maps to detect current location). He could also add whatever interest he has, and then he could very easily search for people who live near his area, and who also have the same interests. If you want to know more about the makers of this website, please feel free to read about each person right here below:
+<br><br><br>
+<img src="{{STATIC_URL}}images/Kais.jpg" style="height:100px;width:120px;" />
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}

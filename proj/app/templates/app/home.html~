@@ -1,0 +1,101 @@
+{% extends 'base_menu.html' %}
+ 
+ 
+{% block title %} MEETme {% endblock %}
+{% block head %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script>
+$(function() {
+	$( ".interests" ).each(function( index ) {
+
+		var parts = $(this).text().split(',');
+		var code = $(this).html();
+
+		
+		$.each(parts, function(index, value) {
+			code = code.replace(value, '<img src="{{STATIC_URL}}images/icons/' + value + '.png">' + value); 
+		});
+		$(this).html(code);
+	});
+
+$.each(is, function(key, value) {   
+     $('.selectInterest')
+         .append($("<option></option>")
+         .attr("value",key)
+         .text(value)); 
+});
+
+});
+
+var is=["soccer","bass","boxing","camera","cards","chess","computer","cooking","domino","draw","drums","games","hockey","magic","guitar","math","movies","music","news","od","piano","pool","puzzles","racing","read","write","shopping","sing","travel","sport","tv","videogames","volleyball"];
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/home.css"> 
+{% endblock %}
+{% block content %}
+<div id="events">
+    <h2 style="color:#3bb9ff"> Events </h2>
+
+    {% for event in events %}
+    <div class="event">
+        <h2>
+                {{event.title}}
+
+        </h2>
+        <p><span class="interests">{{event.interests}}</span></p>
+        <p>
+            <time datetime="{{event.when|date:"c"}}">
+            {{event.when|date}}
+            </time>
+        </p>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+
+<div id="CE">
+	<a href="#" id="create_event">Create Event </a>
+	<div id="new_event">
+		<form action="../newevent/" method="post">
+		<table id="ceTable">
+		<tr>
+		<td>Title:</td>
+		<td><input type="text" name="title"></td>
+		</tr>
+		<tr>
+		<td>Interests:</td>
+		<td><select class="selectInterest"></select>&nbsp&nbsp&nbsp<select class="selectInterest"></select></td>
+		</tr>
+		<tr>
+		<td>Date:</td>
+		<td><input type="text" name="date"></td>
+		</tr>
+		<tr>
+		<td>Time:</td>
+		<td><input type="text" name="time"></td>
+		</tr>
+		<tr>
+		<td>Place:</td>
+		<td><input type="text" name="place"></td>
+		</tr>
+		<tr>
+		<td>Description:</td>
+		<td><textarea name="description" rows="3" cols="30"></textarea></td>
+		</tr>
+		<tr>
+		<td></td>
+		<td style="text-align:right;"><input type="submit" name="create" value="Create Event" /></td>
+		</tr>
+		</table>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

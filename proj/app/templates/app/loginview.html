@@ -1,0 +1,24 @@
+
+ 
+
+ 
+{% block content %}
+
+
+<div style="width:300px; margin:250px auto; border:5px solid black; padding:25px; text-align:center; border-radius:15px;">
+
+<img src="{{STATIC_URL}}images/logo.png">
+
+
+<form action="../authorize/" method="post">
+{% csrf_token %}
+Username: <input type="text" name="username"/><br/><br/>
+Password: <input type="password" name="password"/><br/><br/>
+<input type="submit" value="Login" /><p><a href="/register" style="text-decoration:none; color:#3D3D3D;">Sign Up Here!</a></p>
+</form>
+
+</div>
+
+
+    
+{% endblock %}

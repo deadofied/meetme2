@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/base.css">
+	<link rel="" type="text/javascript" href="{{STATIC_URL}}js/base.js">
+	{% block head %}{% endblock %}
+    </head>
+    <body>
+<div id="header">
+<img src="{{STATIC_URL}}images/logo.png">
+{% block header %}{% endblock %}
+</div>
+<div id="stripe">
+</div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+<div id="footer">
+<a href="#" onclick="alert('Made By MEETme MegaBits Group 2013! Enjoy :)')" id="about">About </a>
+</div>
+    </body>
+</html>

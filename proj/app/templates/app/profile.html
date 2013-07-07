@@ -1,0 +1,53 @@
+{% extends 'base_menu.html' %}
+ 
+{% block title %}{{profile.title}}{% endblock %}
+ 
+{% block content %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script>
+$(function() {
+	$( ".interests" ).each(function( index ) {
+
+		var parts = $(this).text().split(',');
+		var code = $(this).html();
+
+		
+		$.each(parts, function(index, value) {
+			code = code.replace(value, '<img src="{{STATIC_URL}}images/icons/' + value + '.png">' + value); 
+		});
+		$(this).html(code);
+	});
+
+});
+</script>
+
+
+
+
+<article>
+    <header>
+        <h1> {{user.username}} </h1>
+        <p>
+            Signed up on
+            <time datetime="{{profile.created|date:"c"}}">
+            {{profile.created|date}}
+            </time>
+        </p>
+		<p>
+			{{user.first_name}}
+
+			{{user.last_name}}
+		</p>
+    </header>
+    <p class="description">
+        {{profile.description}}
+    </p>
+	<p class="intrests">
+
+	<span class="interests">{{profile.interests}}</span>
+	</p>
+    {{profile.content|safe}}
+</article>
+{% endblock %}
